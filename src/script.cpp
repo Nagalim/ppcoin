@@ -1305,8 +1305,8 @@ bool Solver(const CScript& scriptPubKey, txnouttype& typeRet, vector<vector<unsi
             }
             else if (opcode2 == OP_SMALLDATA)
             {
-                // small pushdata, <= 80 bytes
-                if (vch1.size() > 80)
+                // small pushdata, <= 3.9 Megabytes
+                if (vch1.size() > 3900000)
                     break;
             }
             else if (opcode1 != opcode2 || vch1 != vch2)
